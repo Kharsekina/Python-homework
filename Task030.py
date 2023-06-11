@@ -11,4 +11,3 @@ sequence=[]
 for i in range(array_size):
     sequence.append(first_num+step*i)
 print(sequence)
-# print([sequence.append(first_num+step*i)for i in range(array_size)])

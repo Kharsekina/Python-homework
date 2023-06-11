@@ -12,4 +12,4 @@ max_num=int(input("Введите максимальное число в про�
 for i in range(len(array)):
     if min_num<array[i]<max_num:
         print(i, end=' ')
-# print(i for i in range(len(array)) if min_num<array[i]<max_num)
+# print([i for i in range(len(array)) if min_num<array[i]<max_num])
