@@ -14,16 +14,25 @@
 # 5 10 15 20 25 30
 # 6 12 18 24 30 36
 
-def print_operation_table(operation, x, y):
-    for i in range(x):
-        i=i+1
+# def print_operation_table(operation, x, y):
+#     for i in range(x):
+#         i=i+1
+#         list=[]
+#         for j in range(y):
+#             j=j+1
+#             list.append(i*j)
+#         print(*list)
+    
+# num_rows=int(input("Введите номер строки: "))
+# num_columns=int(input("Введите номер столбца: "))
+# print_operation_table(lambda num_rows, num_columns: num_columns*num_rows,num_rows,num_columns)
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    for x in range(1, num_rows+1):
         list=[]
-        for j in range(y):
-            j=j+1
-            list.append(i*j)
+        for y in range(1, num_columns+1):
+            num=operation(x,y)
+            list.append(num)
         print(*list)
     
-num_rows=int(input("Введите номер строки: "))
-num_columns=int(input("Введите номер столбца: "))
-print_operation_table(lambda num_rows, num_columns: num_columns*num_rows,num_rows,num_columns)
-
+print_operation_table(lambda x, y: x*y)
