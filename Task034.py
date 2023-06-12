@@ -14,9 +14,9 @@
 def rhythm(array):
     vowels=['а','е','и','о','у','ы','э','ю','я']
     counter=list()
-    for i in range(len(array)):
+    for i in array:
         count=0
-        for j in range(len(array[i])):
+        for j in i:
             if j in vowels:
                 count+=1
         counter.append(count)
