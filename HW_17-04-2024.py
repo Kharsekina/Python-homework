@@ -4,40 +4,67 @@
 # Если хотя бы в одном случае отрезок окажется больше суммы двух других, 
 # то треугольника с такими сторонами не существует. Отдельно сообщить является ли треугольник разносторонним, равнобедренным или равносторонним.
 
-def triangle(a, b, c):
-    if a + b <= c or a + c <= b or b + c <= a:
-        return "Треугольник с такими сторонами не существует"
-    elif a != b and b != c and a != c:
-        return "Треугольник разносторонний"
-    elif a == b and b == c:
-        return "Треугольник равносторонний"
-    else:
-        return "Треугольник равнобедренный"
+# def triangle(a, b, c):
+#     if a + b <= c or a + c <= b or b + c <= a:
+#         return "Треугольник с такими сторонами не существует"
+#     elif a != b and b != c and a != c:
+#         return "Треугольник разносторонний"
+#     elif a == b and b == c:
+#         return "Треугольник равносторонний"
+#     else:
+#         return "Треугольник равнобедренный"
     
-side_1=int(input("Введите длинну первой стороны: "))
-print(side_1)
-side_2=int(input("Введите длинну первой стороны: "))
-print(side_2)
-side_3=int(input("Введите длинну первой стороны: "))
-print(side_3)
+# side_1=int(input("Введите длинну первой стороны: "))
+# print(side_1)
+# side_2=int(input("Введите длинну первой стороны: "))
+# print(side_2)
+# side_3=int(input("Введите длинну первой стороны: "))
+# print(side_3)
 
-print(triangle(side_1,side_2,side_3))
+# print(triangle(side_1,side_2,side_3))
 
 # Напишите код, который запрашивает число и сообщает является ли оно простым или составным. 
 # Используйте правило для проверки: “Число является простым, если делится нацело только на единицу и на себя”. 
 # Сделайте ограничение на ввод отрицательных чисел и чисел больше 100 тысяч.
 
-def number(x):
-    if x < 0 or x > 100000:
-        return "Некорректное число"
-    if x == 1 or x == 0:
-        return "Число не является ни простым, ни составным."
-    for i in range(2, x):
-        if num % i == 0:
-            return "Число составное."
-    return "Число простое."
+# def number(x):
+#     if x < 0 or x > 100000:
+#         return "Некорректное число"
+#     if x == 1 or x == 0:
+#         return "Число не является ни простым, ни составным."
+#     for i in range(2, x):
+#         if num % i == 0:
+#             return "Число составное."
+#     return "Число простое."
 
-num=int(input("Введите число: "))
+# num=int(input("Введите число: "))
+# print(num)
+
+# print(number(num))
+
+# Программа загадывает число от 0 до 1000. 
+# Необходимо угадать число за 10 попыток. 
+# Программа должна подсказывать “больше” или “меньше” после каждой попытки. 
+# Для генерации случайного числа используйте код:
+# from random import randintnum = randint(LOWER_LIMIT, UPPER_LIMIT)
+
+import random
+LOWER_LIMIT=0
+UPPER_LIMIT=1000
+
+num=random.randrange(LOWER_LIMIT,UPPER_LIMIT)
 print(num)
 
-print(number(num))
+user_count=1
+while user_count <= 10:
+    user_num=int(input("Введите число: "))
+    if user_num==num:
+        print("Вы угадали!")
+        break
+    elif user_num<num:
+        print("Больше")
+    else:
+        print("Меньше")
+    user_count +=1
+    print(f"У вас осталось {10-user_count} попыток")
+print("Вы не угадали")
